@@ -13,6 +13,30 @@ class WordCount {
     ???
   }
 
+  def fib(n: Int): Int = {
+    def loop(target: Int, init: Int, acc: Int): Int = {
+      if (target == 0) init
+      else loop(target - 1, acc, init + acc)
+    }
+    loop(n, 0, 1)
+  }
+
+  def fact(n: Int): Long = {
+    def loop(target: Long, acc: Long): Long = {
+      if (target == 1) acc
+      else loop(target - 1, acc * target)
+    }
+    loop(n.toLong, 1L)
+  }
+
+  def getSum(numbers: List[Int]): Long {
+    def loop(sum: Int, acc: List[Int]): Long = {
+      if (acc.isEmpty) sum
+      else loop(sum + acc.head, acc.tail)
+    }
+    loop(0, numbers)
+  }
+
 //  /**
 //   * 勉強会をやる発端となったダメコード
 //   * @param lines
