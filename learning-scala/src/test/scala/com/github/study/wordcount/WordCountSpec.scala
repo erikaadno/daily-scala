@@ -16,4 +16,9 @@ class WordCountSpec extends FunSpec with Matchers {
       target.countFruitsFromLines(lines) should be (Map("banana" -> 1, "muscat" -> 1, "orange" -> 3, "mango" -> 2, "apple" -> 3, "kiwi" -> 1, "papaya" -> 1))
     }
   }
+  describe("fib") {
+    it("5 -> 5") {
+      assert(target.fib(5) == 5)
+    }
+  }
 }
