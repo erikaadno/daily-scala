@@ -30,8 +30,19 @@ object FizzBuzz {
         case _ => i.toString
       }
     }
-
     println(result.mkString("\n"))
+  }
 
+  def useTailrec = {
+    def loop(fizzbuzzed: Seq[String], acc: Seq[Int]): Seq[String] = {
+      acc match {
+        case h :: t if h % 15 == 0 => loop(fizzbuzzed :+ "FizzBuzz", t)
+        case h :: t if h % 5 == 0 => loop(fizzbuzzed :+ "Buzz", t)
+        case h :: t if h % 3 == 0 => loop(fizzbuzzed :+ "Fizz", t)
+        case h :: t => loop(fizzbuzzed :+ h.toString, t)
+        case _ => fizzbuzzed
+      }
+    }
+    println(loop(Nil, (1 to 100).toList.toSeq).mkString("\n"))
   }
 }
